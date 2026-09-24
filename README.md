@@ -170,9 +170,8 @@ Key findings:
 - **Dropout 0.3 hurts** this small model at 96×96 (0.8528 → 0.6827); extra
   rotation/brightness augmentation also gives no gain over plain
   hflip + crop.
-- An earlier optimizer sweep (see `results_cnn.md`) found `Adam lr=1e-3`
-  clearly ahead of `lr=1e-2` and SGD variants (0.6066 test acc on the
-  original 32×32 flatten model).
+- An earlier optimizer sweep found `Adam lr=1e-3` clearly ahead of `lr=1e-2`
+  and SGD variants on the original 32×32 flatten model.
 
 Full per-epoch logs live in [`runs/`](runs/); the table index is
 [`runs/summary.md`](runs/summary.md).
@@ -192,7 +191,6 @@ src/neuroforge/
   training.py      fit() / evaluate() loops
 train_cnn.py       training entry point + experiment reports
 runs/              per-experiment Markdown reports + summary.md
-results_cnn.md     earlier optimizer-sweep log
 data/              Durian Leaf Diseases dataset
 ```
 
