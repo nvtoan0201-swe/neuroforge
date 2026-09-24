@@ -52,14 +52,30 @@ using the per-channel mean/std computed on the **train** split.
 
 ## Requirements
 
-- Python **3.14+**
-- [`uv`](https://docs.astral.sh/uv/) (all dependencies are pinned in
-  `pyproject.toml` / `uv.lock`)
+- [`uv`](https://docs.astral.sh/uv/) — the only thing you need to install.
+  All Python dependencies are pinned in `pyproject.toml` / `uv.lock`.
+- Python **3.14+**. You do **not** need to install Python yourself: `uv`
+  reads `.python-version` and downloads a matching interpreter automatically.
 
 ## Setup
 
 ```bash
-uv sync          # create .venv and install dependencies
+# 1. Install uv (skip if you already have it)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. Get the code
+git clone https://github.com/nvtoan0201-swe/neuroforge.git
+cd neuroforge
+
+# 3. Create the virtualenv and install dependencies
+uv sync
+```
+
+That's it — the dataset is committed in the repo, so you can train right
+away:
+
+```bash
+uv run train_cnn.py --image-size 32 --blocks 2 --epochs 1   # quick smoke test
 ```
 
 ## Usage
