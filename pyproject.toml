@@ -1,0 +1,24 @@
+[project]
+name = "neuroforge"
+version = "0.1.0"
+description = "Neural networks and CNNs implemented from scratch with NumPy"
+readme = "README.md"
+authors = [
+    { name = "nvtoan0201-swe", email = "nvtoan0201@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pillow>=12.3.0",
+    "tqdm>=4.70.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.21,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.8",
+]
